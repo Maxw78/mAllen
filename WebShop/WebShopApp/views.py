@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 def home(request):
-    return HttpResponse('Welcome to the WebShop')
+    return render(request, 'home.html', {'title': 'Home'})
 
 def AboutUs(request):
-    return HttpResponse('About Us')
+    return render(request, 'aboutus.html', {'title': 'About Us'})
 
 def ContactUs(request):
-    return HttpResponse('ContactUs')
+    return render(request, 'contactus.html', {'title': 'Contact Us'})
 
 def Products(request):
-    return HttpResponse('Product')
+    return render(request, 'products.html', {'title': 'Products'})

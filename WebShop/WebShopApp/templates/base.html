@@ -1,0 +1,104 @@
+{% load static %}
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+        <title>Home - Technlogy Web Shop</title>
+
+    </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <body class="wide">
+        <div class='container'>
+            <header class="site-header">
+
+                <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+              
+                  <div class="container">
+              
+                    <a class="navbar-brand mr-4" href="{% url "WebShop" %}">Technlogy Web Shop</a>
+              
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              
+                    <span class="navbar-toggler-icon"></span>
+              
+                    </button>
+              
+                    <div class="collapse navbar-collapse" id="navbarToggle">
+              
+                      <div class="navbar-nav mr-auto">
+              
+                        <a class="nav-item nav-link" href="{% url "WebShop" %}">Home</a>
+              
+                        <a class="nav-item nav-link" href="{% url "WebShop-About" %}">About</a>
+                         <a class="nav-item nav-link" href="{% url "WebShop-Products" %}">Products</a>
+                          <a class="nav-item nav-link" href="{% url "WebShop-Contact" %}">Contact</a>
+              
+              
+                      </div>
+              
+                      <!-- Navbar Right Side -->
+              
+                      <div class="navbar-nav">
+              
+                        <a class="nav-item nav-link" href="#">Login</a>
+              
+                        <a class="nav-item nav-link" href="#">Register</a>
+              
+                      </div>
+              
+                    </div>
+              
+                  </div>
+              
+                </nav>
+              
+              </header>
+              
+        </div>
+        <div id="page" class="hfeed site">
+            <header>
+                <div class="header">
+                    <div class="main-head-wrap inner-wrap clearfix">
+                        <div id="header-logo-image">
+                            <a href="/">
+                                <img src="http://wisdompets.com/wp-content/uploads/2015/10/wisdom-pet-logo-single.png" alt="FS Book Service">
+                            </a>
+                        </div>
+                        <div id="header-text" class="">
+                            <h1 id="site-title">
+                                <a href="{% url "WebShop" %}" title="Technlogy WebShop" rel="home">Technlogy Web Shop</a>
+                            </h1>
+                            <p>Tech at your finger tips at any time.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </header>
+            <div class="main-wrapper">
+                <div class="single-page clearfix">
+                    <div class="inner-wrap">
+                        <p>Here we look to provide you with the latest technlogy products at quick speeds.</p>
+                        <hr>
+                        <div>
+                        {% block content %}
+                        {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="colophon">
+                <div class="inner-wrap">
+                    fictitious brand created by Maxwell Allen 2022 for the purpose of training. All products and people associated with Technlogy WebShop are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Please see your amazon or other vendors for all matters related to your technlogy products.
+                </div>
+            </footer>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
