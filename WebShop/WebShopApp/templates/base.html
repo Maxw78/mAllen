@@ -2,7 +2,7 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
         <title>Home - Technlogy Web Shop</title>
 
     </head>
@@ -44,11 +44,15 @@
                       <!-- Navbar Right Side -->
               
                       <div class="navbar-nav">
+
+                        {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                        {% else %}
               
-                        <a class="nav-item nav-link" href="#">Login</a>
-              
-                        <a class="nav-item nav-link" href="#">Register</a>
-              
+                        <a class="nav-item nav-link" href="{% url "login" %}">Login</a>
+                        <a class="nav-item nav-link" href="{% url "profile" %}">Profile</a>
+                        <a class="nav-item nav-link" href="{% url "register" %}">Register</a>
+                        {%endif%}
                       </div>
               
                     </div>
@@ -65,8 +69,8 @@
                 <div class="header">
                     <div class="main-head-wrap inner-wrap clearfix">
                         <div id="header-logo-image">
-                            <a href="/">
-                                <img src="http://wisdompets.com/wp-content/uploads/2015/10/wisdom-pet-logo-single.png" alt="FS Book Service">
+                            <a href="{% url "WebShop" %}" >
+                                <img src="http://wisdompets.com/wp-content/uploads/2015/10/wisdom-pet-logo-single.png" alt="FS Technlogy Web Shop">
                             </a>
                         </div>
                         <div id="header-text" class="">
@@ -84,6 +88,16 @@
                     <div class="inner-wrap">
                         <p>Here we look to provide you with the latest technlogy products at quick speeds.</p>
                         <hr>
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert alert-{{message.tags}}">
+                        {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+
+
                         <div>
                         {% block content %}
                         {% endblock %}
