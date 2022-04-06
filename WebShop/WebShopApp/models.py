@@ -15,6 +15,7 @@ class Product(models.Model):
     product_category = models.CharField(max_length=15, choices=CATEGORY_CHOICES)
     release_date = models.DateField()
     description = models.TextField(max_length=100, blank=False)
+    product_photo = models.ImageField(default='default.jpg', upload_to = 'product_photo/')
 
 def _str_ (self):
     return self.product_name
@@ -22,12 +23,12 @@ def _str_ (self):
 class Profile(models.Model):
     profile_id = models.AutoField(primary_key=True, blank=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    full_name = models.CharField(max_length=30, blank=False)
-    date_of_birth = models.DateField()
-    address = models.CharField(max_length=50, blank=False)
-    city = models.CharField(max_length=50, blank=False)
+    full_name = models.CharField(max_length=30, null=True)
+    date_of_birth = models.DateField(null=True)
+    address = models.CharField(max_length=50, null=True)
+    city = models.CharField(max_length=50, null=True)
     COUNTRY_CHOICES = [('UK', 'UK'), ('France', 'France'), ('Germany', 'Germany'), ('Spain', 'Spain')]
-    country = models.CharField(max_length=15, choices=COUNTRY_CHOICES, blank=False)
+    country = models.CharField(max_length=15, choices=COUNTRY_CHOICES, null=True)
     user_photo = models.ImageField(default='default.jpg', upload_to = 'user_photo/')
 
 def _str_ (self):

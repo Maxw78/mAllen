@@ -1,8 +1,8 @@
 body {
 
-    background: #8b8686;
+    background: #beb8b8;
   
-    color: #333333;
+    color: #a79595;
   
     margin-top: 5rem;
   
@@ -11,14 +11,14 @@ body {
   p{
       font-family: veranda;
       font-size: 20px;
-      color:red
+      color:rgb(27, 26, 26)
 
   }
    
   
   h1, h2, h3, h4, h5, h6 {
   
-    color: #934c96;
+    color: #28315c;
   
   }
   
@@ -34,7 +34,7 @@ body {
   
   .bg-steel {
   
-    background-color: #5f788a;
+    background-color: #825494;
   
   }
   .site-header .navbar-nav .nav-link {
