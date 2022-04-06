@@ -3,6 +3,7 @@ from unicodedata import name
 from django.db import models
 from datetime import datetime
 from django.core.validators import MaxValueValidator
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Product(models.Model):
@@ -20,16 +21,17 @@ def _str_ (self):
 
 class Profile(models.Model):
     profile_id = models.AutoField(primary_key=True, blank=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=30, blank=False)
     date_of_birth = models.DateField()
     address = models.CharField(max_length=50, blank=False)
     city = models.CharField(max_length=50, blank=False)
     COUNTRY_CHOICES = [('UK', 'UK'), ('France', 'France'), ('Germany', 'Germany'), ('Spain', 'Spain')]
     country = models.CharField(max_length=15, choices=COUNTRY_CHOICES, blank=False)
-    user_photo = models.ImageField(upload_to = 'user_photo/')
+    user_photo = models.ImageField(default='default.jpg', upload_to = 'user_photo/')
 
 def _str_ (self):
-    return self.full_name
+    return f'Profile for {self.user.username}'
 
 class Review(models.Model):
     review_id = models.AutoField(primary_key=True, blank=False)
