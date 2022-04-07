@@ -1,26 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <h1>Products</h1>
 <h1>Our Products</h1>
 <p> 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc erat sapien, molestie at consectetur eu, fringilla non sem. Mauris et ultricies nulla. Maecenas sed varius libero. Nulla facilisi. Vivamus dolor magna, tincidunt in nisi vitae, blandit lacinia mauris. Vestibulum eros turpis, feugiat eu erat nec, maximus aliquet risus. Proin tempor venenatis nisl et commodo.
     Mauris dapibus urna in faucibus fringilla. Duis blandit ligula vitae placerat tincidunt. Ut venenatis ut nisi id rhoncus. Aliquam varius, tortor et eleifend malesuada, ante enim hendrerit mauris, ac dignissim massa dui eget sapien. Donec auctor molestie nisl in luctus. Aenean orci sapien, volutpat non magna eget, lobortis aliquet nisl. In mollis suscipit justo. Phasellus odio nisl, rutrum nec quam vel, porttitor dignissim elit. Cras tempor cursus diam, in commodo massa. Nulla suscipit tincidunt dolor, a ultrices lorem sollicitudin at. Duis maximus interdum turpis sit amet pretium. Duis vitae dui sollicitudin, imperdiet justo et, tempor quam. Donec ullamcorper diam in mauris mattis varius.  </p>
-
-<h2>Laptop</h2>
-<img src="images/plane.jpeg" alt="Our Delivery Plane">
-<p>Mauris dapibus urna in faucibus fringilla. Duis blandit ligula vitae placerat tincidunt. Ut venenatis ut nisi id rhoncus. Aliquam varius, tortor et eleifend malesuada, ante enim hendrerit mauris, ac dignissim massa dui eget sapien. Donec auctor molestie nisl in luctus. Aenean orci sapien, volutpat non magna eget, lobortis aliquet nisl. In mollis suscipit justo. Phasellus odio nisl, rutrum nec quam vel, porttitor dignissim elit. Cras tempor cursus diam, in commodo massa. Nulla suscipit tincidunt dolor, a ultrices lorem sollicitudin at. Duis maximus interdum turpis sit amet pretium. Duis vitae dui sollicitudin, imperdiet justo et, tempor quam. Donec ullamcorper diam in mauris mattis varius.  </p>
-</p>
-
-<h2>Mobile</h2>
-<img src="laptop.jpg" alt="Laptop">
-<p>Mauris dapibus urna in faucibus fringilla. Duis blandit ligula vitae placerat tincidunt. Ut venenatis ut nisi id rhoncus. Aliquam varius, tortor et eleifend malesuada, ante enim hendrerit mauris, ac dignissim massa dui eget sapien. Donec auctor molestie nisl in luctus. Aenean orci sapien, volutpat non magna eget, lobortis aliquet nisl. In mollis suscipit justo. Phasellus odio nisl, rutrum nec quam vel, porttitor dignissim elit. Cras tempor cursus diam, in commodo massa. Nulla suscipit tincidunt dolor, a ultrices lorem sollicitudin at. Duis maximus interdum turpis sit amet pretium. Duis vitae dui sollicitudin, imperdiet justo et, tempor quam. Donec ullamcorper diam in mauris mattis varius.  </p>
-</p>
-
-<h2>TV</h2>
-<p>Mauris dapibus urna in faucibus fringilla. Duis blandit ligula vitae placerat tincidunt. Ut venenatis ut nisi id rhoncus. Aliquam varius, tortor et eleifend malesuada, ante enim hendrerit mauris, ac dignissim massa dui eget sapien. Donec auctor molestie nisl in luctus. Aenean orci sapien, volutpat non magna eget, lobortis aliquet nisl. In mollis suscipit justo. Phasellus odio nisl, rutrum nec quam vel, porttitor dignissim elit. Cras tempor cursus diam, in commodo massa. Nulla suscipit tincidunt dolor, a ultrices lorem sollicitudin at. Duis maximus interdum turpis sit amet pretium. Duis vitae dui sollicitudin, imperdiet justo et, tempor quam. Donec ullamcorper diam in mauris mattis varius.  </p>
-</p>
-    
-<p>Mauris dapibus urna in faucibus fringilla. Duis blandit ligula vitae placerat tincidunt. Ut venenatis ut nisi id rhoncus. Aliquam varius, tortor et eleifend malesuada, ante enim hendrerit mauris, ac dignissim massa dui eget sapien. Donec auctor molestie nisl in luctus. Aenean orci sapien, volutpat non magna eget, lobortis aliquet nisl. In mollis suscipit justo. Phasellus odio nisl, rutrum nec quam vel, porttitor dignissim elit. Cras tempor cursus diam, in commodo massa. Nulla suscipit tincidunt dolor, a ultrices lorem sollicitudin at. Duis maximus interdum turpis sit amet pretium. Duis vitae dui sollicitudin, imperdiet justo et, tempor quam. Donec ullamcorper diam in mauris mattis varius.  </p>
-
+    <br> <h1> View our latest products below!</h1>
+    {% for product in products %}
+    <a href="{% url 'WebShop-Product_page' product.product_id %}"> 
+    <h3> {{ product.product_name}} </h3> <br> </a>
+    <h3> <img src="{{ product.product_photo.url}}"> </h3> <br>
+        {% endfor %}
 {% endblock content %}

@@ -1,16 +1,20 @@
 body {
 
-    background: #beb8b8;
+    background: #b1a0a0;
   
-    color: #a79595;
+    color: #222020;
   
-    margin-top: 5rem;
+    margin-top:105;
+    margin-bottom:55;
+    margin-left:250;
+    margin-right:250;
+
   
   }
   
   p{
-      font-family: veranda;
-      font-size: 20px;
+      font-family: courier;
+      font-size: 22px;
       color:rgb(27, 26, 26)
 
   }
@@ -26,7 +30,7 @@ body {
   
   ul {
   
-    margin: 0;
+    margin: 2;
   
   }
   
@@ -134,7 +138,10 @@ body {
   
   }
   
-   
+  img{
+    width:100%;
+    max-width:300px;
+}
   
   .account-img {
   

@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import Http404
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+from .models import Product
+from .models import Review
 # Create your views here.
 
 def home(request):
@@ -17,7 +18,15 @@ def ContactUs(request):
     return render(request, 'contactus.html', {'title': 'Contact Us'})
 
 def Products(request):
-    return render(request, 'products.html', {'title': 'Products'})
+    products = Product.objects.all()
+    return render(request, 'products.html', {'title': 'Products', 'products':products})
+
+def Product_page(request, product_id):
+    try:
+        product =Product.objects.get(product_id=product_id)
+    except Product.DoesNotExist:
+        raise Http404('Book not found')
+    return render(request, 'product_page.html', {'title': 'Product_page','product':product})
 
 def register(request):
 

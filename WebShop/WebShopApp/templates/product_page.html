@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Product Name: <h1> <h2> {{ product.product_name|capfirst }} </h2>
+<h3> Brand: <h3>
+<p> {{ product.brand|capfirst }} </p>
+<h3> Cost: <h3>
+<p> {{ product.average_cost|capfirst }} </p>
+<h3> Category: <h3>
+<p> {{ product.product_category|capfirst }} </p>
+<h3> Release Date: <h3>
+<p> {{ product.release_date|capfirst }} </p>
+<h3> Description: <h3>
+<p> {{ product.description|capfirst }} </p>
+<h3> Product Photo: <h3>
+    <img src="{{ product.product_photo.url }}">
+
+    <h2> User Reviews: <h2>
+
+        {%for review in product.review.all %} <br>
+        <h4> Review Number </h4> 
+        <li> {{ review.review_id}} </li> <br>
+        <h4> Product Rating </h4>
+        <li> {{ review.product_rating}} </li>
+        <h4> Review </h4>
+        <li> {{ review.review}} </li>
+        <h4> Date </h4>
+        <li> {{ review.date}} </li>
+        <h4> Author Photo </h4>
+        <li> <img src="{{ review.profile.user_photo.url }}"> </li>
+        {% endfor %}
+{% endblock content %}
