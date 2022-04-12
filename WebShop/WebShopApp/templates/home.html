@@ -4,24 +4,37 @@
 
 <h1>HomePage</h1>
 <h1>What we do</h1>
+<ul>
+    <li> <a href="#Section1"> What we Do </a> </li>
+    <li> <a href="#Section2"> Speed Matters </a> </li>
+        <li> <a href="#Section3"> Only the highest quality products </a> </li>
+        <li> <a href="#Section4"> Check out our products here </a> </li>
+</ul>
+
+<Section id="Section1">
+<h1>What we do</h1>
 <p> 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc erat sapien, molestie at consectetur eu, fringilla non sem. Mauris et ultricies nulla. Maecenas sed varius libero. Nulla facilisi. Vivamus dolor magna, tincidunt in nisi vitae, blandit lacinia mauris. Vestibulum eros turpis, feugiat eu erat nec, maximus aliquet risus. Proin tempor venenatis nisl et commodo.
     Mauris dapibus urna in faucibus fringilla. Duis blandit ligula vitae placerat tincidunt. Ut venenatis ut nisi id rhoncus. Aliquam varius, tortor et eleifend malesuada, ante enim hendrerit mauris, ac dignissim massa dui eget sapien. Donec auctor molestie nisl in luctus. Aenean orci sapien, volutpat non magna eget, lobortis aliquet nisl. In mollis suscipit justo. Phasellus odio nisl, rutrum nec quam vel, porttitor dignissim elit. Cras tempor cursus diam, in commodo massa. Nulla suscipit tincidunt dolor, a ultrices lorem sollicitudin at. Duis maximus interdum turpis sit amet pretium. Duis vitae dui sollicitudin, imperdiet justo et, tempor quam. Donec ullamcorper diam in mauris mattis varius.  </p>
+</Section>
 
+<Section id="Section2">
 <h2>Speed Matters</h2>
 <img src="{%static 'img/images/plane.jpeg'%}"  alt="Our Delivery Plane">
 <p>Mauris dapibus urna in faucibus fringilla. Duis blandit ligula vitae placerat tincidunt. Ut venenatis ut nisi id rhoncus. Aliquam varius, tortor et eleifend malesuada, ante enim hendrerit mauris, ac dignissim massa dui eget sapien. Donec auctor molestie nisl in luctus. Aenean orci sapien, volutpat non magna eget, lobortis aliquet nisl. In mollis suscipit justo. Phasellus odio nisl, rutrum nec quam vel, porttitor dignissim elit. Cras tempor cursus diam, in commodo massa. Nulla suscipit tincidunt dolor, a ultrices lorem sollicitudin at. Duis maximus interdum turpis sit amet pretium. Duis vitae dui sollicitudin, imperdiet justo et, tempor quam. Donec ullamcorper diam in mauris mattis varius.  </p>
 </p>
-
+</Section>
+<Section id="Section3">
 <h2>Only the highest quality products</h2>
 <img src="{%static 'img/images/laptop.jpg'%}" alt="Laptop">
 <p>Mauris dapibus urna in faucibus fringilla. Duis blandit ligula vitae placerat tincidunt. Ut venenatis ut nisi id rhoncus. Aliquam varius, tortor et eleifend malesuada, ante enim hendrerit mauris, ac dignissim massa dui eget sapien. Donec auctor molestie nisl in luctus. Aenean orci sapien, volutpat non magna eget, lobortis aliquet nisl. In mollis suscipit justo. Phasellus odio nisl, rutrum nec quam vel, porttitor dignissim elit. Cras tempor cursus diam, in commodo massa. Nulla suscipit tincidunt dolor, a ultrices lorem sollicitudin at. Duis maximus interdum turpis sit amet pretium. Duis vitae dui sollicitudin, imperdiet justo et, tempor quam. Donec ullamcorper diam in mauris mattis varius.  </p>
 </p>
-
+</Section>
+<Section id="Section4">
 <h2> Check out our products here</h2>
 <a href="{% url "WebShop-Products" %}" target="_blank">
 <button type="button"Product Page!</button>
 
 <p> Click Here!  </p>
-
+</Section>
 {% endblock content %}

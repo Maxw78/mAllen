@@ -2,7 +2,18 @@
 {% block content %}
 
 <h1>Contact Us</h1>
-<p> Contact us through the form below! <p>
+<ul>
+  <li> <a href="#Section1"> Form Explanation </a> </li>
+  <li> <a href="#Section2"> Form </a> </li>
+      <li> <a href="#Section3"> Submit </a> </li>
+</ul>
+
+<Section id="Section1">
+<p> Contact us through the form below! -- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc erat sapien, molestie at consectetur eu, fringilla non sem. Mauris et ultricies nulla. Maecenas sed varius libero. Nulla facilisi. Vivamus dolor magna, tincidunt in nisi vitae, blandit lacinia mauris. Vestibulum eros turpis, feugiat eu erat nec, maximus aliquet risus. Proin tempor venenatis nisl et commodo.
+  <p>
+  </section>
+
+<Section id="Section2">
 <form>
     <label for="fname">First name:</label><br>
     <input type="text" id="fname" name="fname"><br>
@@ -10,11 +21,16 @@
     <input type="text" id="lname" name="lname"><br>
     <label for="email">Email:</label><br>
     <input type="text" id="email" name="email"><br>
+    <label for="Subject">Subject:</label><br>
+    <input type="text" id="Subject" name="Subject"><br>
     <label for="message">Message:</label><br>
     <input type="text" id="message" name="message"><br>
   </form> 
+</section>
   <a href="{% url "WebShop-Contact" %}" target="_blank">
-    <button type="button"Product Page!</button>
-    
+    <button type="button"Submit</button>
+
+      <Section id="Section3">
     <p> Submit!  </p>
+  </section>
 {% endblock content %}
